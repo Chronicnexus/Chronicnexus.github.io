@@ -11,21 +11,18 @@
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 	function loadFile(id) {
 		var resultfiles = ["results.txt"];
-		var bookings,files="";
+		var bookings,files="",myData;
 		resultfiles.forEach(function(file, index){
     		 $.get(file, function(datafil) {
         		bookings = datafil.split("\n");
-			files = bookings[0];
-		/*	alert(files);
-			alert(bookings[0]);*/
     		 });
  	        });
- 	        alert(files);
+ 	        alert(bookings[0]);
  	   	var i=1;
  	   	files.forEach(function(file, index){
     		 $.get(file, function(datafil) {
-        		bookings = datafil.split("\n");
-        		$("#"+i+"").append(bookings);
+        		myData = datafil.split("\n");
+        		$("#"+i+"").append(myData);
         		$("#"+i+"").height(35);
         		var myVar = ''+i+'';
 			document.getElementById(myVar).style.overflow = "scroll";
