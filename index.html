@@ -18,9 +18,9 @@
 	function getFiles(id){
 		var resultfiles = ["results.txt"];
 		var bookings,myData,results;
-		
     		$.get(resultfiles, function(datafil) {
         		bookings = datafil.split("\n");
+        		alert(bookings+"\n");
     		 });
  	        return bookings;
 	}
