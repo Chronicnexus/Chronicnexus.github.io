@@ -13,13 +13,17 @@
 		var resultfiles = ["results.txt"];
 		var bookings,files="",myData;
 		resultfiles.forEach(function(file, index){
-    		 $.get(file, function(datafil) {
+    		$.get(file, function(datafil) {
         		bookings = datafil.split("\n");
     		 });
+    		 alert(bookings[0]);
  	        });
- 	        alert(bookings[0]);
+	}
+	
+	function loadContents(files){
+		alert(files);
  	   	var i=1;
- 	   	bookings[0].forEach(function(file, index){
+ 	   	files.forEach(function(file, index){
     		 $.get(file, function(datafil) {
         		myData = datafil.split("\n");
         		$("#"+i+"").append(myData);
