@@ -11,7 +11,7 @@
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 	function loadFile(id) {
 		var resultfiles = ["results.txt"];
-		var bookings,files;
+		var bookings,files="";
 		resultfiles.forEach(function(file, index){
     		 $.get(file, function(datafil) {
         		bookings = datafil.split("\n");
