@@ -20,10 +20,9 @@
 		resultfiles.forEach(function(file, index){
     		$.get(file, function(datafil) {
         		bookings = datafil.split("\n");
-        		results = bookings[0];
     		 });
  	        });
- 	        alert(results);
+ 	        alert(bookings[1]);
  	        return bookings;
 	}
 	
