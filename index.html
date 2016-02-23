@@ -6,25 +6,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
 </script>
 <script>
-$('#action-button').click(function() {
-   $.ajax({
-      url: 'http://api.joind.in/v2.1/talks/10889',
-      data: {
-         format: 'json'
-      },
-      error: function() {
-         $('#content-wrap').html('<p>An error has occurred</p>');
-      },
-      dataType: 'jsonp',
-      success: function(data) {
-         var $title = $('<h1>').text(data.talks[0].talk_title);
-         var $description = $('<p>').text(data.talks[0].talk_description);
-         $('#content-wrap')
-            .append($title)
-            .append($description);
-      },
-      type: 'GET'
-   });
+$(document).ready(function(){
+	$('action-button').click(function() {
+   		$.ajax({
+      			url: 'http://Chronicnexus.github.io/ajax_info.txt',
+      			data: {
+         			format: 'txt'
+      			}
+      			dataType: 'txt',
+      			success: function(data) {
+         			var $title = $('<h1>').text("check");
+         			var $description = $('<p>').text("check2");
+         			$('#content-wrap')
+            			.append($title)
+            			.append($description);
+      			},
+      			type: 'GET'
+   			});
 });
 </script>
 
