@@ -17,12 +17,12 @@
 	function getFiles(id){
 		var resultfiles = ["results.txt"];
 		var bookings,myData,results;
-		resultfiles.forEach(function(file, index){
-    		$.get(file, function(datafil) {
+		
+    		$.get(resultfiles, function(datafil) {
         		bookings = datafil.split("\n");
     		 });
- 	        });
- 	        alert(bookings[1]);
+ 	        
+ 	        alert(bookings);
  	        return bookings;
 	}
 	
