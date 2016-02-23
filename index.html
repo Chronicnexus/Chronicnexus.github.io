@@ -9,18 +9,24 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script type="text/javascript">
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
+	//Main function
 	function loadFile(id) {
+		var results = getFiles(id);
+		alert(results);
+	}
+	//Fnction to get the list of files relevant to search query
+	function getFiles(id){
 		var resultfiles = ["results.txt"];
 		var bookings,files="",myData;
 		resultfiles.forEach(function(file, index){
     		$.get(file, function(datafil) {
         		bookings = datafil.split("\n");
-        		alert(bookings[0]);
     		 });
  	        });
- 	        alert(bookings);
+ 	        return bookings;
 	}
 	
+	//Function to load eac file to a div tag
 	function loadContents(files){
 		alert(files);
  	   	var i=1;
