@@ -1,113 +1,65 @@
 <!DOCTYPE html>
-<html>
-<head> </head>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
-</script>
-<script>
-$(document).ready(function(){
-	$('action-button').click(function() {
-   		$.ajax({
-      			url: 'http://Chronicnexus.github.io/ajax_info.txt',
-      			data: {
-         			format: 'txt'
-      			}
-      			dataType: 'txt',
-      			success: function(data) {
-         			var $title = $('<h1>').text("check");
-         			var $description = $('<p>').text("check2");
-         			$('#content-wrap')
-            			.append($title)
-            			.append($description);
-      			},
-      			type: 'GET'
-   			});
-});
-</script>
+<html lang="en">
+<head>
+  <title>Adaptive Assignment #2 </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
+	function loadFile(id) {
+		reader.open('get', 'results.txt', true); 
+		reader.onreadystatechange = displayContents;
+		reader.send(null);
+	}
 
+	function displayContents() {
+		if(reader.readyState==4) {
+			var el = document.getElementById('1');
+			el.innerHTML = reader.responseText;
+		}
+	}
 
+</script>
+  </script>
+</head>
 <body>
 
-<div class="columns">
-            <div class="callout">
-             <center> <strong><p> CLICK ON ANY OF THE QUERIES TO RETRIEVE RECOMMENDATIONS</p></strong></center>
-            </div>
+<div class="container">
+  <h2> Search Queries</h2>
+  <p> These are the list of input queries. Click on any of them to view recommendations...</p>                  
+  <ul class="pagination">
+    <li><a href="#" onclick="loadFile(1)">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+	<li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#">10</a></li>	
+  </ul>
+  <BR><BR><BR>
+  <ul class="pagination">
+  <li><a href="#">THE SEARCH QUERY DATA GOES HERE</a></li>
+  </ul> 
+</div>
+<div class="container">
+  <div class="well well-lg" id="1" >Large Well</div>
+  <div class="well well-lg" id="2">Large Well</div>
+  <div class="well well-lg" id="3">Large Well</div>
+  <div class="well well-lg" id="4">Large Well</div>
+  <div class="well well-lg" id="5">Large Well</div>
+  <div class="well well-lg" id="6">Large Well</div>
+  <div class="well well-lg" id="7">Large Well</div>
+  <div class="well well-lg" id="8">Large Well</div>
+  <div class="well well-lg" id="9">Large Well</div>
+  <div class="well well-lg" id="10">Large Well</div>
 </div>
 
-<div class="row">
-    <div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 1</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 2</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 3</p>
-        </div>
-    </div>
-</div>
 
-<div class="row">
-    <div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 4</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 5</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 6</p>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 7</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 8</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 9</p>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>QUERY 10</p>
-        </div>
-    </div>
-</div>
-
-<div class="columns">
-            <div class="callout">
-             <center> <strong><p> THE SEARCH QUERY WILL GO HERE...</p></strong></center>
-            </div>
-</div>
-
-<div class="columns"  id="content-wrap">
-            <div class="callout">
-             <center> <strong><p> RECOMMENDATIONS FOR THE QEURIES WILL GO HERE...</p></strong></center>
-            </div>
-</div>
-<button type="button" id="action-button">Change Content
-</button>
 </body>
 </html>
