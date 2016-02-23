@@ -10,18 +10,23 @@
   <script type="text/javascript">
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 	function loadFile(id) {
-		var files = ["101.txt", "12.txt","results.txt"];
-		var i=1;
-		var bookings;
-		files.forEach(function(file, index){
+		var resultfiles = ["results.txt"];
+		var bookings,files;
+		resultfiles.forEach(function(file, index){
     		 $.get(file, function(datafil) {
         		bookings = datafil.split("\n");
-        		$("#"+i+"").append(bookings[0]);
-        		alert(bookings[0]);
+			files = bookings[0];
+    		 });
+ 	        });
+ 	        alert(files);
+ 	   	var i=1;
+ 	   	files.forEach(function(file, index){
+    		 $.get(file, function(datafil) {
+        		bookings = datafil.split("\n");
+        		$("#"+i+"").append(bookings);
         		$("#"+i+"").height(35);
         		var myVar = ''+i+'';
 			document.getElementById(myVar).style.overflow = "scroll";
-        		/*document.getElementById(""+i).style.overflow = "scroll";*/
         		i=i+1;
     		 });
  	   });
