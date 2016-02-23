@@ -16,9 +16,9 @@
 		files.forEach(function(file, index){
     		 $.get(file, function(datafil) {
         		bookings = datafil.split("\n");
+        		$("#"+i+"").append(bookings);
+        		i=i+1;
     		 });
-    		 $("#"+i+"").append(bookings);
-    		 i=i+1;
  	   });
 	}
 </script>
