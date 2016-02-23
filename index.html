@@ -10,7 +10,7 @@
   <script type="text/javascript">
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 	function loadFile(id) {
-		reader.open('get', 'results.txt', true); 
+		reader.open('get', 'sample/results.txt', true); 
 		reader.onreadystatechange = displayContents;
 		reader.send(null);
 	}
