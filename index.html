@@ -1,8 +1,12 @@
+<!DOCTYPE html>
 <html>
-<head> </head>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
+<body>
 
+<p id="demo">Let AJAX change this text.</p>
+
+<button type="button"
+onclick="loadDoc('http://Chronicnexus.github.io/ajax_info.txt', myFunction)">Change Content
+</button>
 
 <script>
 function loadDoc(url, cfunc) {
@@ -17,92 +21,10 @@ function loadDoc(url, cfunc) {
   xhttp.send();
 }
 function myFunction(xhttp) {
-      document.getElementById("content-wrap").innerHTML = "Ooops!";
+  document.getElementById("demo").innerHTML = xhttp.responseText;
 }
 </script>
-<body>
 
-<div class="columns">
-            <div class="callout">
-             <center> <strong><p> CLICK ON ANY OF THE QUERIES TO RETRIEVE RECOMMENDATIONS</p></strong></center>
-            </div>
-</div>
-
-<div class="row">
-    <div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-	<div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="large-4 medium-4 columns">
-        <div class="callout">
-            <p>Six columns</p>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="columns">
-            <div class="callout">
-             <center> <strong><p> THE SEARCH QUERY WILL GO HERE...</p></strong></center>
-            </div>
-</div>
-
-<div class="columns">
-            <div class="callout">
-             <center> <strong><p> RECOMMENDATIONS FOR THE QEURIES WILL GO HERE...</p></strong></center>
-            </div>
-</div>
-<button type="button" onclick="loadDoc('http://Chronicnexus.github.io/ajax_info.txt', myFunction)">Change Content
-</button>
 </body>
 </html>
+
