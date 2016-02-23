@@ -17,6 +17,7 @@
     		 $.get(file, function(datafil) {
         		bookings = datafil.split("\n");
         		$("#"+i+"").append(bookings);
+        		 document.getElementById("#"+i+"").style.overflow = "scroll";
         		i=i+1;
     		 });
  	   });
