@@ -17,6 +17,7 @@
     		 $.get(file, function(datafil) {
         		bookings = datafil.split("\n");
         		$("#"+i+"").append(bookings[0]);
+        		alert(bookings[0]);
         		$("#"+i+"").height(35);
         		var myVar = ''+i+'';
 			document.getElementById(myVar).style.overflow = "scroll";
