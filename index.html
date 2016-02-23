@@ -12,12 +12,13 @@
 	function loadFile(id) {
 		var files = ["101.txt", "12.txt"];
 		var i=1;
+		var bookings;
 		files.forEach(function(file, index){
-    		$.get(file, function(datafil) {
-        		var bookings = datafil.split("\n");
-		        $("#"+i+"").append(bookings);
-    		});
-    		i=i+1;
+    		 $.get(file, function(datafil) {
+        		bookings = datafil.split("\n");
+    		 });
+    		 $("#"+i+"").append(bookings);
+    		 i=i+1;
  	   });
 	}
 </script>
