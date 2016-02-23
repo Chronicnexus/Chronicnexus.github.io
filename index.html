@@ -19,7 +19,7 @@
 		var resultfiles = ["results.txt"];
 		var bookings,myData,results;
     		$.get(resultfiles, function(datafil) {
-        		bookings = datafil.split("\n");
+        		bookings += datafil.split("\n");
         	
     		 });
     		 alert(bookings+"\n");
