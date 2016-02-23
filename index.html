@@ -18,8 +18,8 @@
         		bookings = datafil.split("\n");
         		$("#"+i+"").append(bookings);
         		$("#"+i+"").height(35);
-        		var temp = ""+i+"";
-        		document.getElementById(var).style.overflow = "scroll";
+        		$("#"+i+"").overflow("scroll");
+        		/*document.getElementById(""+i).style.overflow = "scroll";*/
         		i=i+1;
     		 });
  	   });
