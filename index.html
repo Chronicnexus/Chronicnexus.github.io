@@ -1,10 +1,108 @@
-<!DOCTYPE html>
 <html>
+<head> </head>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+
+
+<script>
+function loadDoc(url, cfunc) {
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      cfunc(xhttp);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+function myFunction(xhttp) {
+      document.getElementById("content-wrap").innerHTML = "Ooops!";
+}
+</script>
 <body>
 
-<p>This is a paragraph.</p>
-<p>This is a paragraph.</p>
-<p>This is a paragraph.</p>
+<div class="columns">
+            <div class="callout">
+             <center> <strong><p> CLICK ON ANY OF THE QUERIES TO RETRIEVE RECOMMENDATIONS</p></strong></center>
+            </div>
+</div>
 
+<div class="row">
+    <div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+	<div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+	<div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+	<div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+	<div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+	<div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+	<div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="large-4 medium-4 columns">
+        <div class="callout">
+            <p>Six columns</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="columns">
+            <div class="callout">
+             <center> <strong><p> THE SEARCH QUERY WILL GO HERE...</p></strong></center>
+            </div>
+</div>
+
+<div class="columns">
+            <div class="callout">
+             <center> <strong><p> RECOMMENDATIONS FOR THE QEURIES WILL GO HERE...</p></strong></center>
+            </div>
+</div>
+<button type="button" onclick="loadDoc('ajax_info.txt', myFunction)">Change Content
+</button>
 </body>
 </html>
