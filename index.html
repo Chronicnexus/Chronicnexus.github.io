@@ -16,13 +16,14 @@
 	//Fnction to get the list of files relevant to search query
 	function getFiles(id){
 		var resultfiles = ["results.txt"];
-		var bookings,myData;
+		var bookings,myData,results;
 		resultfiles.forEach(function(file, index){
     		$.get(file, function(datafil) {
         		bookings = datafil.split("\n");
-        		alert(bookings);
+        		results = bookings[0];
     		 });
  	        });
+ 	        alert(results);
  	        return bookings;
 	}
 	
