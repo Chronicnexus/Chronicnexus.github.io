@@ -23,7 +23,7 @@
         				myData = datafil.split("\n");
         				var myVar = ''+i+'';
         				document.getElementById(myVar).innerHTML = "";
-        				$("#"+i+"").append("RECOMMENDATION "+i +":"+"\n");
+        				$("#"+i+"").append("RECOMMENDATION "+i +":"+"<BR>");
         				$("#"+i+"").append(myData);
         				$("#"+i+"").height(50);
 					document.getElementById(myVar).style.overflow = "scroll";
@@ -36,7 +36,7 @@
         		lines = data.split('\n');
         		document.getElementById("Search").innerHTML = "";
         		document.getElementById("Search").style.height= "50";
-        		document.getElementById("Search").innerHTML = "SEARCH QUERY IS "+"\n"
+        		document.getElementById("Search").innerHTML = "SEARCH QUERY IS "+"<BR>"
         		document.getElementById("Search").innerHTML += lines[id-1];
         		document.getElementById("Search").style.overflow = "scroll";
 		});
