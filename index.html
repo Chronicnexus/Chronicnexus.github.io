@@ -37,7 +37,7 @@
         		lines = data.split('\n');
         		document.getElementById("Search").innerHTML = "";
         		$("Search").height(50);
-     	      		document.getElementById("Search").innerHTML = "SEARCH QUERY IS "+"<BR>"
+     	      		//document.getElementById("Search").innerHTML = "SEARCH QUERY IS "+"<BR>"
         		document.getElementById("Search").innerHTML += lines[id-1];
         		document.getElementById("Search").style.overflow = "scroll";
 		});
@@ -64,10 +64,11 @@
     <li><a href="#" onclick="loadFile(10)">10</a></li>	
   </ul>
   <BR><BR><BR>
-  <div class="container">  
-  <div><B><h4> INDEXING AND RECOMMENDATION </B> </h4></div>
+</div>
+
+<div class="container">  
+  <div><B><h4> SEARCH QUERY IS... </B> </h4></div>
   <div class="well well-lg" id="Search" ></div>
-  </div>
 </div>
 
 <div class="container">
