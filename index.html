@@ -10,16 +10,11 @@
   <script type="text/javascript">
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 	function loadFile(id) {
-		var resultfiles = ["results.txt"];
-		var fileData, myData;
- 	   	//resultfiles.forEach(function(file, index){
-    		 $.get(resultfiles[0], function(datafil) {
-        		fileData = datafil.split("\n");
-    		    });
- 	   	//});
-		alert("Files are .. " + fileData);
-		
+		var file=fopen(getScriptPath("Results.txt"),0);
+		var str = fread(file,flength(file) ;
+		alert(str);
 		//Loading files one by one
+		var fileData, myData;
 		var files = ["101.txt","12.txt"];
 		var i=1;
 		var temp="";
