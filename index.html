@@ -10,6 +10,16 @@
   <script type="text/javascript">
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 	function loadFile(id) {
+		var resultfiles = ["results.txt"];
+		var fileData = "";
+ 	   	resultfiles.forEach(function(file, index){
+    		 $.get(file, function(datafil) {
+        		fileData = datafil.split("\n");
+    		    });
+ 	   	});
+		alert("Files are .. " + fileData);
+		
+		//Loading files one by one
 		var files = ["101.txt","12.txt"];
 		var i=1;
 		var temp="";
@@ -19,13 +29,12 @@
         		$("#"+i+"").append(myData);
         		$("#"+i+"").height(35);
         		alert(myData);
-        		temp=myData;
         		var myVar = ''+i+'';
 			document.getElementById(myVar).style.overflow = "scroll";
         		i=i+1;
     		    });
  	   	});
- 	   	alert(temp);
+ 	   	
 	}
 </script>
   </script>
