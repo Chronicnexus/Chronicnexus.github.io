@@ -13,12 +13,12 @@
 		//Loading files one by one
 		var fileData, myData;
 		var lines;
-		$.get('results.txt', function(data) {
+		$.get('resultData/results.txt', function(data) {
         		lines = data.split('\n');
         		alert(lines[id-1]);
         		var i=1;
- 	   		files.forEach(function(lines[id-1], index){
-    		 		$.get(file, function(datafil) {
+ 	   		files.forEach(function(, index){
+    		 		$.get(("resultData\"+file), function(datafil) {
         				myData = datafil.split("\n");
         				$("#"+i+"").append(myData);
         				$("#"+i+"").height(35);
