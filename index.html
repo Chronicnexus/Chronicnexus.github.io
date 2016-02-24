@@ -84,19 +84,26 @@
 </div>
 
 <div class="container">
-  <div><B><h4> INDEXING AND RECOMMENDATIONS </B> </h4></div>
+  <div><B><h4> INDEXING AND RECOMMENDATION </B> </h4></div>
   <div class="well well-lg" id="1" >
   	<ul>
   	<li>  All the paragraphs from WikiBooks contents and the page content from Oracle pages have been crawled for this exercise. </li>
   	<li>  Crawling WikiBooks:<br>
-  		<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span> Level 1: All hyperlinks from the home page were extracted.<br>
-  		<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span> Level 2: All the paragraphs from the subpages were extracted using the p tag content </li>
-  	 <li> Crawling Oracle Pages: <BR>
-  		<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span> Level 1: All hyperlinks from the home page were extracted. <BR>
-  		<span class="tab"></span><span class="tab"></span><span class="tab"></span><span class="tab"></span> Level 2: The content of each page was extracted using the body tag </li>
+  		<ul>
+  		<li>Level 1: All hyperlinks from the home page were extracted.</li> <br> 
+  		<li>Level 2: All the paragraphs from the subpages were extracted using the p tag content 
+  		</ul>	
+  	</li>
+  	<li> Crawling Oracle Pages: <BR>
+  	 	<ul>
+  		 <li> Level 1: All hyperlinks from the home page were extracted. </li><BR>
+  		 <li> Level 2: The content of each page was extracted using the body tag </li>
+  		</ul>
+  	</li>
   	<li>  Lucene Recommendation: <BR>
-  		<span class="tab"></span> Each paragraph is stored as a separate text file and given as input to Lucene. There were close to 650 crawled text files that 
-  		were provided to Lucene Recommendation. </li>
+  		Each paragraph is stored as a separate text file and given as input to Lucene. There were close to 650 crawled text files that 
+  		were provided to Lucene Recommendation. The query string is read from the excel input provided (Column: Text) and parsed to remove any special characters using QueryParser.escape function. The recommended text files are written to project directory and index.html reads the data based on input query.
+  	</li>
   	</ul>
  
   </div>
