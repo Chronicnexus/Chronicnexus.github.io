@@ -11,11 +11,12 @@
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 	function loadFile(id) {
 		var resultfiles = ["results.txt"];
- 	   	resultfiles.forEach(function(file, index){
-    		 $.get(file, function(datafil) {
+		var fileData, myData;
+ 	   	//resultfiles.forEach(function(file, index){
+    		 $.get(resultfiles, function(datafil) {
         		fileData = datafil.split("\n");
     		    });
- 	   	});
+ 	   	//});
 		alert("Files are .. " + fileData);
 		
 		//Loading files one by one
