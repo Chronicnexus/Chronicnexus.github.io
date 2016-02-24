@@ -36,9 +36,9 @@
 		$.get('Query.txt', function(data) {
         		lines = data.split('\n');
         		document.getElementById("Search").innerHTML = "";
-        		$("Search").height(50);
      	      		//document.getElementById("Search").innerHTML = "SEARCH QUERY IS "+"<BR>"
         		document.getElementById("Search").innerHTML += lines[id-1];
+        		$("#Search").height(50);
         		document.getElementById("Search").style.overflow = "scroll";
 		});
 	}
