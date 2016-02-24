@@ -16,9 +16,9 @@
 		$.get('results.txt', function(data) {
         		lines = data.split('\n');
         		alert(lines[id-1]);
-        		var temp = lines[id-1];
+        		//var temp = lines[id-1];
         		var i=1;
- 	   		temp.forEach(function(file, index){
+ 	   		lines[id-1].forEach(function(file, index){
     		 		$.get(file, function(datafil) {
         				myData = datafil.split("\n");
         				$("#"+i+"").append(myData);
