@@ -21,10 +21,10 @@
  	   		temp.forEach(function(file, index){
     		 		$.get(file, function(datafil) {
         				myData = datafil.split("\n");
-        				$("#"+i+"").append(myData);
-        				$("#"+i+"").height(35);
-        				alert(myData);
         				var myVar = ''+i+'';
+        				document.getElementById(myVar).innerHTML = "";
+        				$("#"+i+"").append(myData);
+        				$("#"+i+"").height(50);
 					document.getElementById(myVar).style.overflow = "scroll";
         				i=i+1;
     			    	});
@@ -57,16 +57,16 @@
   </ul> 
 </div>
 <div class="container">
-  <div class="well well-lg" id="1" >Large Well</div>
-  <div class="well well-lg" id="2">Large Well</div>
-  <div class="well well-lg" id="3">Large Well</div>
-  <div class="well well-lg" id="4">Large Well</div>
-  <div class="well well-lg" id="5">Large Well</div>
-  <div class="well well-lg" id="6">Large Well</div>
-  <div class="well well-lg" id="7">Large Well</div>
-  <div class="well well-lg" id="8">Large Well</div>
-  <div class="well well-lg" id="9">Large Well</div>
-  <div class="well well-lg" id="10">Large Well</div>
+  <div class="well well-lg" id="1" ></div>
+  <div class="well well-lg" id="2"></div>
+  <div class="well well-lg" id="3"></div>
+  <div class="well well-lg" id="4"></div>
+  <div class="well well-lg" id="5"></div>
+  <div class="well well-lg" id="6"></div>
+  <div class="well well-lg" id="7"></div>
+  <div class="well well-lg" id="8"></div>
+  <div class="well well-lg" id="9"></div>
+  <div class="well well-lg" id="10"></div>
 </div>
 
 
