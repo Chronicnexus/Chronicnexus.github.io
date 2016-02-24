@@ -30,6 +30,13 @@
     			    	});
  		  	});
 		});
+		
+		$.get('Query.txt', function(data) {
+        		lines = data.split('\n');
+        		document.getElementById("Search").innerHTML = "";
+        		document.getElementById("Search").innerHTML = lines;
+        		document.getElementById("Search").style.overflow = "scroll";
+		});
 	}
 </script>
   </script>
@@ -53,20 +60,20 @@
   </ul>
   <BR><BR><BR>
   <ul class="pagination">
-  <li><a href="#">THE SEARCH QUERY DATA GOES HERE</a></li>
+  <li><a href="#"><div id="Search"><h5>SEARCH QUERY..<BR></h5></div></a></li>
   </ul> 
 </div>
 <div class="container">
-  <div class="well well-lg" id="1" ></div>
-  <div class="well well-lg" id="2"></div>
-  <div class="well well-lg" id="3"></div>
-  <div class="well well-lg" id="4"></div>
-  <div class="well well-lg" id="5"></div>
-  <div class="well well-lg" id="6"></div>
-  <div class="well well-lg" id="7"></div>
-  <div class="well well-lg" id="8"></div>
-  <div class="well well-lg" id="9"></div>
-  <div class="well well-lg" id="10"></div>
+  <div class="well well-lg" id="1" ><h5>RECOMMENDATION 1</h5><br></div>
+  <div class="well well-lg" id="2"><h5>RECOMMENDATION 2</h5><br></div>
+  <div class="well well-lg" id="3"><h5>RECOMMENDATION 3</h5><br></div>
+  <div class="well well-lg" id="4"><h5>RECOMMENDATION 4</h5><br></div>
+  <div class="well well-lg" id="5"><h5>RECOMMENDATION 5</h5><br></div>
+  <div class="well well-lg" id="6"><h5>RECOMMENDATION 6</h5><br></div>
+  <div class="well well-lg" id="7"><h5>RECOMMENDATION 7</h5><br></div>
+  <div class="well well-lg" id="8"><h5>RECOMMENDATION 8</h5><br></div>
+  <div class="well well-lg" id="9"><h5>RECOMMENDATION 9</h5><br></div>
+  <div class="well well-lg" id="10"><h5>RECOMMENDATION 10</h5><br></div>
 </div>
 
 
