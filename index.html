@@ -49,7 +49,8 @@
 
 <div class="container">
   <h2> Search Queries</h2>
-  <p> These are the list of input queries. Click on any of them to view recommendations...</p>                  
+  <p> These are the list of input queries. Click on any of them to view recommendations...</p>  
+  <p> <i> Details on Crawling and Indexing are provided at the bottom of the page</p> </i> 
   <ul class="pagination">
     <li><a href="#" onclick="loadFile(1)">1</a></li>
     <li><a href="#" onclick="loadFile(2)">2</a></li>
@@ -82,6 +83,24 @@
   <div class="well well-lg" id="10"><h5>RECOMMENDATION 10</h5><br></div>
 </div>
 
+<div class="container">
+  <div><B><h4> INDEXING AND RECOMMENDATIONS </B> </h4><BR></div>
+  <div class="well well-lg" id="1" >
+  	<ul>
+  	<li>. All the paragraphs from WikiBooks contents and the page content from Oracle pages have been crawled for this exercise. </li>
+  	<li> Crawling WikiBooks:<br>
+  		<span class="tab"></span> Level 1: All hyperlinks from the home page were extracted.<br>
+  		<span class="tab"></span> Level 2: All the paragraphs from the subpages were extracted using the p tag content </li>
+  	 <li> Crawling Oracle Pages: <BR>
+  		<span class="tab"></span> Level 1: All hyperlinks from the home page were extracted. <BR>
+  		<span class="tab"></span> Level 2: The content of each page was extracted using the body tag </li>
+  	<li> Lucene Recommendation: <BR>
+  		<span class="tab"></span> Each paragraph is stored as a separate text file and given as input to Lucene. There were close to 650 crawled text files that 
+  		were provided to Lucene Recommendation. </li>
+  	</ul>
+ 
+  </div>
+</div>
 
 </body>
 </html>
