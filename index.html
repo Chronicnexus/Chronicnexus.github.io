@@ -18,7 +18,7 @@
         		alert(lines[id-1]);
         		//var temp = lines[id-1];
         		var i=1;
- 	   		lines[id-1].forEach(function(file, index){
+ 	   		lines[1].forEach(function(file, index){
     		 		$.get(file, function(datafil) {
         				myData = datafil.split("\n");
         				$("#"+i+"").append(myData);
