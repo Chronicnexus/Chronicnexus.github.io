@@ -12,27 +12,25 @@
 	function loadFile(id) {
 		//Loading files one by one
 		var fileData, myData;
-		var files = ["101.txt","12.txt"];
 		var lines;
 		$.get('results.txt', function(data) {
         		lines = data.split('\n');
-        		alert(lines[0]);
-		});
-       
-		var i=1;
-		var temp="";
- 	   	files.forEach(function(file, index){
-    		 $.get(file, function(datafil) {
-        		myData = datafil.split("\n");
-        		$("#"+i+"").append(myData);
-        		$("#"+i+"").height(35);
-        		alert(myData);
-        		var myVar = ''+i+'';
-			document.getElementById(myVar).style.overflow = "scroll";
-        		i=i+1;
-    		    });
+        		alert(lines[id-1]);
+        		var i=1;
+ 	   		files.forEach(function(lines[id-1], index){
+    		 		$.get(file, function(datafil) {
+        				myData = datafil.split("\n");
+        				$("#"+i+"").append(myData);
+        				$("#"+i+"").height(35);
+        				alert(myData);
+        				var myVar = ''+i+'';
+					document.getElementById(myVar).style.overflow = "scroll";
+        				i=i+1;
+    		    	});
  	   	});
  	   	
+
+		});
 	}
 </script>
   </script>
