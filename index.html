@@ -11,25 +11,7 @@
 	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
 	//Main function
 	function loadFile(id) {
-		var results = getFiles(id);
-		setTimeout(function(){ alert("Hello  " + results); }, 3000);
-	}
-	//Fnction to get the list of files relevant to search query
-	function getFiles(id){
-		var resultfiles = ["results.txt"];
-		var bookings,myData,results;
-    		$.get(resultfiles, function(datafil) {
-        		bookings += datafil.split("\n");
-        	
-    		 });
-    		 alert(bookings+"\n");
- 	        return bookings;
-	}
-	
-	//Function to load eac file to a div tag
-	function loadContents(files){
-		alert(files);
- 	   	var i=1;
+		var files = ["101.txt","12.txt"];
  	   	files.forEach(function(file, index){
     		 $.get(file, function(datafil) {
         		myData = datafil.split("\n");
