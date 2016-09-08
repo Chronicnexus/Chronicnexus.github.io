@@ -1,118 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Adaptive Assignment #2 </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-	var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
-	function loadFile(id) {
-		//Loading files one by one
-		var fileData, myData;
-		var lines;
-		$.get('results.txt', function(data) {
-        		lines = data.split('\n');
-        		//alert(lines[id-1]);
-        		var temp = lines[id-1].split(',');
-        		//alert(temp);
-        		var i=1;
- 	   		temp.forEach(function(file, index){
-    		 		$.get(file, function(datafil) {
-        				myData = datafil.split("\n");
-        				var myVar = ''+i+'';
-        				document.getElementById(myVar).innerHTML = "";
-        				$("#"+i+"").append("RECOMMENDATION "+i +":"+"<BR>");
-        				$("#"+i+"").append(myData);
-        				$("#"+i+"").height(50);
-					document.getElementById(myVar).style.overflow = "scroll";
-        				i=i+1;
-    			    	});
- 		  	});
-		});
-		
-		$.get('Query.txt', function(data) {
-        		lines = data.split('\n');
-        		document.getElementById("Search").innerHTML = "";
-     	      		//document.getElementById("Search").innerHTML = "SEARCH QUERY IS "+"<BR>"
-        		document.getElementById("Search").innerHTML += lines[id-1];
-        		$("#Search").height(50);
-        		document.getElementById("Search").style.overflow = "scroll";
-		});
-	}
-</script>
-  </script>
-</head>
-<body>
-
-<div class="container">
-  <center><h2> CONTENT BASED RECOMMENDATIONS - ASSIGNMENT #2</h2></center><BR><BR>
-  <p> These are the list of input queries. Click on any of them to view recommendations...</p>  
-  <p> <i> Details on Crawling and Indexing are provided at the bottom of the page</p> </i> 
-  <ul class="pagination">
-    <li><a href="#" onclick="loadFile(1)">1</a></li>
-    <li><a href="#" onclick="loadFile(2)">2</a></li>
-    <li><a href="#" onclick="loadFile(3)">3</a></li>
-    <li><a href="#" onclick="loadFile(4)">4</a></li>
-    <li><a href="#" onclick="loadFile(5)">5</a></li>
-    <li><a href="#" onclick="loadFile(6)">6</a></li>
-    <li><a href="#" onclick="loadFile(7)">7</a></li>
-    <li><a href="#" onclick="loadFile(8)">8</a></li>
-    <li><a href="#" onclick="loadFile(9)">9</a></li>
-    <li><a href="#" onclick="loadFile(10)">10</a></li>	
-  </ul>
-  <BR>
-</div>
-
-<div class="container">  
-  <div><B><h4> SEARCH QUERY IS... </B> </h4></div>
-  <div class="well well-lg" id="Search" ></div>
-</div>
-
-<div class="container">
-  <div><B><h4> RECOMMENDATIONS ARE</B> </h4></div>
-  <div class="well well-lg" id="1" ><h5>RECOMMENDATION 1</h5><br></div>
-  <div class="well well-lg" id="2"><h5>RECOMMENDATION 2</h5><br></div>
-  <div class="well well-lg" id="3"><h5>RECOMMENDATION 3</h5><br></div>
-  <div class="well well-lg" id="4"><h5>RECOMMENDATION 4</h5><br></div>
-  <div class="well well-lg" id="5"><h5>RECOMMENDATION 5</h5><br></div>
-  <div class="well well-lg" id="6"><h5>RECOMMENDATION 6</h5><br></div>
-  <div class="well well-lg" id="7"><h5>RECOMMENDATION 7</h5><br></div>
-  <div class="well well-lg" id="8"><h5>RECOMMENDATION 8</h5><br></div>
-  <div class="well well-lg" id="9"><h5>RECOMMENDATION 9</h5><br></div>
-  <div class="well well-lg" id="10"><h5>RECOMMENDATION 10</h5><br></div>
-</div>
-
-<div class="container">
-  <div><B><h4> INDEXING AND RECOMMENDATION </B> </h4></div>
-  <div class="well well-lg" id="1" >
-  	<ul>
-  	<li>  All the paragraphs from WikiBooks contents and the page content from Oracle pages have been crawled for this exercise. </li>
-  	<li>  Crawling WikiBooks:<br>
-  		<ul>
-  		<li>Level 1: All hyperlinks from the home page were extracted.</li>
-  		<li>Level 2: All the paragraphs from the subpages were extracted using the p tag content 
-  		</ul>	
-  	</li>
-  	<li> Crawling Oracle Pages: <BR>
-  	 	<ul>
-  		 <li> Level 1: All hyperlinks from the home page were extracted. </li>
-  		 <li> Level 2: The content of each page was extracted using the body tag </li>
-  		</ul>
-  	</li>
-  	<li>  Lucene Recommendation: <BR>
-  		Each paragraph is stored as a separate text file and given as input to Lucene. There were close to 650 crawled text files that 
-  		were provided to Lucene Recommendation. The query string is read from the excel input provided (Column: Text) and parsed to remove any special characters using QueryParser.escape function. The recommended text files are written to project directory and index.html reads the data based on input query.
-  	</li>
-  	<li>  User Interface: <BR>
-  		The user interface has been built using Bootstrap framework for leveraging inbuilt css styles
-  	</li>
-  	</ul>
- 
-  </div>
-</div>
-
-</body>
+<html>
+  <head>
+    <title>Bar Chart</title>
+    <script type="text/javascript" src="javascript/d3.v2.min.js"></script>
+    <style type="text/css">
+    .chart {
+      background: #00ccff;
+      margin: 10px;
+      padding-top: 10px; 
+    }
+    
+    .chart .right {
+      stroke: white;
+      fill: indianred; 
+    }
+    .chart .left {
+      stroke: white;
+      fill: steelblue; 
+    }
+    .chart rect:hover {
+      fill: #64707d; 
+    }
+    
+    .chart text {
+      fill: white; 
+    }
+    
+    .chart text.name {
+      fill: black; 
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Two sided horiztontal bar chart</h1>
+    <script type="text/javascript">
+      var randomNumbers = function() { 
+        var numbers = [];
+        for (var i = 0; i < 20; i++) {
+          numbers.push(parseInt(Math.random() * 19) + 1);
+        }
+        return numbers;
+      };
+      var randomNames = function() { 
+        var names = [];
+        for (var i = 0; i < 20; i++) {
+          names.push(String.fromCharCode(65 + Math.random() * 25) + String.fromCharCode(65 + Math.random() * 25) + String.fromCharCode(65 + Math.random() * 25));
+        }
+        return names;
+      };
+      var names = randomNames();
+      var leftData = randomNumbers();  
+      var rightData = randomNumbers();
+      for (var i= 0; i< names.length; i++) {
+        console.log(names[i] + " from: " + leftData[i] + " to: " + rightData[i]);  
+      }
+      var labelArea = 160;
+      var chart,
+          width = 400,
+          bar_height = 20,
+          height = bar_height * (names.length);
+      var rightOffset = width + labelArea;
+      var chart = d3.select("body")
+        .append('svg')
+        .attr('class', 'chart')
+        .attr('width', labelArea + width + width)
+        .attr('height', height);
+      
+      var xFrom = d3.scale.linear()
+         .domain([0, d3.max(leftData)])
+         .range([0, width]);
+      var y = d3.scale.ordinal()
+         .domain(names)
+         .rangeBands([10, height]);
+      var yPosByIndex = function(d, index){ return y(index); } 
+      chart.selectAll("rect.left")
+        .data(leftData)
+        .enter().append("rect")
+        .attr("x", function(pos) { return width - xFrom(pos); })
+        .attr("y", yPosByIndex)
+        .attr("class", "left")
+        .attr("width", xFrom)
+        .attr("height", y.rangeBand()); 
+      chart.selectAll("text.leftscore")
+        .data(leftData)
+        .enter().append("text")
+        .attr("x", function(d) { return width - xFrom(d); })
+        .attr("y", function(d, z){ return y(z) + y.rangeBand()/2; } )
+        .attr("dx", "20")
+        .attr("dy", ".36em")
+        .attr("text-anchor", "end")
+        .attr('class', 'leftscore')
+        .text(String);
+      chart.selectAll("text.name")
+        .data(names)
+        .enter().append("text")
+        .attr("x", (labelArea / 2) + width)
+        .attr("y", function(d){ return y(d) + y.rangeBand()/2; } )
+        .attr("dy", ".20em")
+        .attr("text-anchor", "middle")
+        .attr('class', 'name')
+        .text(String);
+      var xTo = d3.scale.linear()
+         .domain([0, d3.max(rightData)])
+         .range([0, width]);
+      chart.selectAll("rect.right")
+        .data(rightData)
+        .enter().append("rect")
+        .attr("x", rightOffset)
+        .attr("y", yPosByIndex)
+        .attr("class", "right")
+        .attr("width", xTo)
+        .attr("height", y.rangeBand()); 
+      chart.selectAll("text.score")
+        .data(rightData)
+        .enter().append("text")
+        .attr("x", function(d) { return xTo(d) +  rightOffset; })
+        .attr("y", function(d,z){ return y(z) + y.rangeBand()/2; } )
+        .attr("dx", -5)
+        .attr("dy", ".36em")
+        .attr("text-anchor", "end")
+        .attr('class', 'score')
+        .text(String);
+    </script>
+  </body>
 </html>
